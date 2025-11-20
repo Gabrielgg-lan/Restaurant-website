@@ -1,0 +1,61 @@
+/* Popular menu colors: deep red + cream */
+:root{
+  --accent:#b22222; /* firebrick */
+  --accent-dark:#7a0f0f;
+  --bg:#fffaf0; /* ivory-ish */
+  --text:#1b1b1b;
+}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+}
+.menu-root{
+  max-width:980px;
+  margin:0 auto;
+  background:linear-gradient(180deg, rgba(255,250,240,0.9), rgba(255,250,240,0.95));
+  padding:18px 22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-icon{width:64px;height:64px}
+.header h1{margin:0;font-size:28px;color:var(--accent-dark)}
+.subtitle{margin:2px 0 0;color:#555}
+.print-btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.print-btn:hover{background:var(--accent-dark)}
+.menu{display:flex;gap:24px}
+.main-col{flex:2}
+.side-col{flex:1}
+.section-title{color:var(--accent);border-bottom:2px solid rgba(0,0,0,0.06);padding-bottom:6px}
+.items{list-style:none;padding:0;margin:8px 0 16px}
+.item{padding:8px 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+.item-main{display:flex;justify-content:space-between;align-items:flex-start}
+.item-name{font-weight:600}
+.item-desc{color:#444;margin-top:6px;font-size:0.95rem}
+.price{font-weight:700;color:var(--accent-dark)}
+.drinks{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));padding:12px;border-radius:8px}
+.drinks h3{margin-top:0;color:var(--accent)}
+.drink-item{display:flex;justify-content:space-between;padding:6px 0}
+.foot-note{font-size:0.85rem;color:#666;margin-top:16px;text-align:center}
+
+/* Responsive */
+@media (max-width:800px){
+  .menu{flex-direction:column}
+  .brand-icon{width:52px;height:52px}
+  .menu-root{padding:12px}
+}
+
+/* Print styles targeting A4 */
+@page { size: A4; margin: 10mm }
+@media print{
+  body{background:white;padding:0}
+  .menu-root{box-shadow:none;max-width:210mm;margin:0;padding:12mm}
+  .print-btn{display:none}
+  .menu{gap:12px}
+}

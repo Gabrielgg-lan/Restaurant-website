@@ -1,0 +1,26 @@
+{
+  "name": "burger-joint-menu",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "convert-images": "node scripts/convert-images.js"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-tabs": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitejs/plugin-react-swc": "^4.2.0",
+    "sharp": "^0.32.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  }
+}

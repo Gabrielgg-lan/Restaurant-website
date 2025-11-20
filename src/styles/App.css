@@ -1,0 +1,189 @@
+:root {
+  --primary: #b22222;
+  --primary-dark: #7a0f0f;
+  --primary-light: #ff6b6b;
+  --bg: #fffaf0;
+  --text: #1b1b1b;
+  --gray-100: #f5f5f5;
+  --gray-200: #eeeeee;
+  --gray-300: #e0e0e0;
+  --gray-600: #757575;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  --modal-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  --cart-width: 380px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  color: var(--gray-600);
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+/* Override react-tabs styles */
+.react-tabs__tab-list {
+  border-bottom: 2px solid var(--gray-300);
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid transparent;
+  bottom: -2px;
+  position: relative;
+  list-style: none;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  color: var(--gray-600);
+  transition: all 0.2s ease;
+}
+
+.react-tabs__tab--selected {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(178, 34, 34, 0.2);
+}
+
+.react-tabs__tab:hover {
+  color: var(--primary-dark);
+}
+
+/* Menu items grid */
+.menu-section {
+  padding: 1rem 0;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.menu-item-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+  transform: scale(1.05);
+}
+
+.menu-item-content {
+  padding: 1rem;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.menu-item-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.price {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.description {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+  
+  .menu-items {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  
+  .menu-item-image {
+    height: 160px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .react-tabs__tab-list {
+    display: none;
+  }
+  
+  .react-tabs__tab-panel {
+    display: block !important;
+  }
+  
+  .menu-section {
+    page-break-after: always;
+  }
+  
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
